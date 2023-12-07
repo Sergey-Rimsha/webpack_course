@@ -1,9 +1,8 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
 import webpack, {Configuration} from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/types";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
+import {BuildOptions} from "./types/types";
 
 
 export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
