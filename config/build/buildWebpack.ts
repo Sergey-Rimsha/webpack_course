@@ -1,10 +1,9 @@
 import webpack from "webpack";
-import path from "path";
-import {buildDevServer} from "./buildDevServer";
-import {buildLoaders} from "./buildLoaders";
-import {buildPlugins} from "./buildPlugins";
-import {buildResolvers} from "./buildResolvers";
 import {BuildOptions} from "./types/types";
+import {buildPlugins} from "./buildPlugins";
+import {buildLoaders} from "./buildLoaders";
+import {buildResolvers} from "./buildResolvers";
+import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpack(options: BuildOptions): webpack.Configuration {
 
