@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react"
-import './app.scss'
+import s from './app.module.scss'
 
 
 export const App = () => {
@@ -18,7 +18,7 @@ export const App = () => {
         <div>
             Hello React world!!!
             <div>{state}</div>
-            <button onClick={onInc}>inc</button>
+            <button className={s.button} onClick={onInc}>inc</button>
         </div>
     )
 }

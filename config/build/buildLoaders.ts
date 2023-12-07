@@ -12,7 +12,14 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
             // Creates `style` nodes from JS strings
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             // Translates CSS into CommonJS
-            "css-loader",
+            {
+                loader: "css-loader",
+                options: {
+                    modules: {
+                        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]'
+                    }
+                },
+            },
             // Compiles Sass to CSS
             "sass-loader",
         ],
