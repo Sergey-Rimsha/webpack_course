@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react"
 import s from './app.module.scss'
+import {Link, Outlet} from "react-router-dom";
 
 
 export const App = () => {
@@ -16,9 +17,24 @@ export const App = () => {
 
     return (
         <div>
-            Hello React world!!!
+            <div>
+                navigate:
+                <div>
+                    <Link to={'/'}>link to main app</Link>
+                </div>
+                <div>
+                    <Link to={'/about'}>link to about</Link>
+                </div>
+                <div>
+                    <Link to={'/shop'}>link to shop</Link>
+                </div>
+            </div>
+            <br/>
             <div>{state}</div>
             <button className={s.button} onClick={onInc}>inc</button>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     )
 }
