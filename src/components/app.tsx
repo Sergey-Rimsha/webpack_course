@@ -1,8 +1,9 @@
 import {useEffect, useState} from "react"
 import s from './app.module.scss'
 import {Link, Outlet} from "react-router-dom";
-
-
+import avatarPng from '@/assets/avatar.png';
+import avatarJpg from '@/assets/avatar.jpg';
+import AvatarSvg from '@/assets/app-image.svg';
 export const App = () => {
 
     const [state, setState] = useState<number>(0)
@@ -17,6 +18,13 @@ export const App = () => {
 
     return (
         <div>
+            <div>
+                <img src={avatarPng} alt="avatarPng"/>
+                <img src={avatarJpg} alt="avatarPng"/>
+            </div>
+            <div>
+                <AvatarSvg className={s.icon} width={55} height={55}/>
+            </div>
             <div>
                 navigate:
                 <div>
