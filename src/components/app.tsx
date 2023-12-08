@@ -4,6 +4,7 @@ import {Link, Outlet} from "react-router-dom";
 import avatarPng from '@/assets/avatar.png';
 import avatarJpg from '@/assets/avatar.jpg';
 import AvatarSvg from '@/assets/app-image.svg';
+
 export const App = () => {
 
     const [state, setState] = useState<number>(0)
@@ -15,6 +16,15 @@ export const App = () => {
     useEffect(() => {
         console.log(state)
     }, [state]);
+
+
+    // if (__PLATFORM__ === 'desktop') {
+    //     return <div>ISDESKTOPPLATFORM</div>
+    // }
+    //
+    // if (__PLATFORM__ === 'mobile') {
+    //     return <div>ISMOBILEPLATFORM</div>
+    // }
 
     return (
         <div>

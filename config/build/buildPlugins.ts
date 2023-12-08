@@ -1,5 +1,5 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack, {Configuration} from "webpack";
+import webpack, {Configuration, DefinePlugin} from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import {BuildOptions} from "./types/types";
@@ -11,7 +11,11 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     const isProd = options.mode === 'production';
 
     const plugins: Configuration['plugins'] = [
-        new HtmlWebpackPlugin({template: options.paths.html})
+        new HtmlWebpackPlugin({template: options.paths.html}),
+        new DefinePlugin({
+            __PLATFORM__: JSON.stringify(options.platform),
+            __ENV__: JSON.stringify(options.mode),
+        }),
     ]
 
     if (isDev) {
