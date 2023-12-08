@@ -72,5 +72,29 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         ]
     }
 
-    return [scssLoader, tsLoader, assetLoader, svgrLoader]
+    const babelLoader = {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: [
+                    '@babel/preset-env',
+                    "@babel/preset-typescript",
+                    [
+                        "@babel/preset-react",
+                        {runtime: 'automatic'}
+                    ],
+                ]
+            }
+        }
+    }
+
+    return [
+        scssLoader,
+        // tsLoader,
+        babelLoader,
+        assetLoader,
+        svgrLoader
+    ]
 }
