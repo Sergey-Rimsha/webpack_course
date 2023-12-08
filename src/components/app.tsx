@@ -9,12 +9,15 @@ export const App = () => {
 
     const [state, setState] = useState<number>(0)
 
+    const onShowConsole = (elem: number) => {
+        console.log(elem)
+    }
     const onInc = () => {
         setState(prevState => prevState + 1)
     }
 
     useEffect(() => {
-        console.log(state)
+        onShowConsole(state)
     }, [state]);
 
 
