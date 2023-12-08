@@ -32,8 +32,8 @@ export const App = () => {
     return (
         <div>
             <div>
-                <img src={avatarPng} alt="avatarPng"/>
-                <img src={avatarJpg} alt="avatarPng"/>
+                <img data-testid={'img'} src={avatarPng} alt="avatarPng"/>
+                <img data-testid={'img'} src={avatarJpg} alt="avatarPng"/>
             </div>
             <div>
                 <AvatarSvg className={s.icon} width={55} height={55}/>
@@ -41,10 +41,10 @@ export const App = () => {
             <div>
                 navigate:
                 <div>
-                    <Link to={'/'}>link to main app</Link>
+                    <Link data-testid={'link'} to={'/'}>link to main app</Link>
                 </div>
                 <div>
-                    <Link to={'/about'}>link to about</Link>
+                    <Link data-testid={'link'} to={'/about'}>link to about</Link>
                 </div>
                 <div>
                     <Link to={'/shop'}>link to shop</Link>
